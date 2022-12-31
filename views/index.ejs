@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include partials/header%>
+
+  <body>
+    
+    <div class="container bg">
+      <% include partials/toppage%>
+        <a href="/users/login" style="color: white;" class="btn btn-dark p-2 m-5">Bắt đầu nào ^^!</a>
+
+    </div>
+
+    <% include partials/footer%>
+
+  </body>
+  <style>
+    body{
+      height: 100vh;
+    }
+    .bg {
+      padding: 0;
+      background-image: url('/images/bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      display: block;
+    }
+    
+  </style>
+
+</html>

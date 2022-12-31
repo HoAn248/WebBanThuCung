@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../partials/header %>
+
+  <body class="bg text-white">
+    
+    <div class="container">
+      <% include ../partials/toppage%>
+      
+        <div class="row d-flex justify-content-around mt-5">
+          <div style="width: 100%;" class="d-flex justify-content-around">
+            <p class="pull-right visible-xs">
+              <a href="admin/add" class="btn btn-primary btn-xs" data-toggle="offcanvas">Tao mới</a>
+            </p>
+            <form action="/logout" method="post">
+              <button type="submit" class="btn btn-primary">Đăng xuất</button>
+            </form>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ids</th>
+                <th scope="col">Tên thú cưng</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% data.forEach(function(e) { %>
+                <tr>
+                  <td scope="row">
+                    <%= e.id %>
+                  </td>
+                  <td>
+                    <%= e.name %>
+                  </td>
+                  <td>
+                    <%= convertPrice(e.price) %>
+                  </td>
+                  <th>
+                    <a class="text-light" href="admin/view/<%= e.id %>">Xem</a>
+                    <a class="text-light" href="admin/edit/<%= e.id %>">Sửa</a>
+                    <a class="text-light" href="admin/delete/<%= e.id %>">Xoá</a>
+                  </th>
+
+                </tr>
+                <% });%>
+            </tbody>
+          </table>
+
+        </div>
+
+    </div>
+    <% include ../partials/footer%>
+
+  </body>
+  <style>
+    .bg {
+      padding: 0;
+      background-image: url('/images/bgadmin.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      display: block;
+    }
+    table{
+      background-color: #6666 !important;
+    }
+  </style>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../partials/header %>
+
+    <body class="bg">
+        <div class="container">
+            <% include ../partials/toppage %>
+                <a href="/home " class="btn btn-primary">Quay zìa</a>
+                <div class="row mt-5 d-flex justify-content-around">
+                    <% data.forEach(function(e,i) { %>
+                        <div class="card" style="width: 15rem;">
+                            <img class="card-img-top" src="<%= e.img %> " alt="Card image cap">
+                            <div class="card-body  d-flex justify-content-center flex-column">
+                                <h5 class="card-title">
+                                    <%= e.name %>
+                                </h5>
+                                <p class="card-text">Giá chỉ: <%= convertPrice(e.price) %>.</p>
+                                <form action="/cart/del/<%= i %>" method="post">
+                                    <button type="submit" class="btn btn-primary">Xóa Hàng</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <% });%>
+                </div>
+
+
+        </div>
+        <% include ../partials/footer%>
+
+    </body>
+    <style>
+        .card{
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+    .card:hover{
+      transform: scale(1.2);
+    }
+    .bg {
+      padding: 0;
+      background-image: url('/images/bghome.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      display: block;
+    }
+    </style>
+
+</html>

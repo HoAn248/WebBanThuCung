@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../partials/header %>
+
+  <body class="bg">
+
+    <div class="container pb-5">
+      <% include ../partials/toppage %>
+        <div class="d-flex justify-content-between mt-3">
+          <div class="avatar">
+            <img title="<%= dataUser.name %> " class="d-block" src="<%= dataUser.avt %> " alt="">
+          </div>
+          <form action="/logout" method="post">
+            <button type="submit" class="btn btn-primary">Đăng xuất</button>
+          </form>
+        </div>
+        
+        <div class="row d-flex justify-content-around mt-3">
+          <% dataPet.forEach(function(e) { %>
+            <div class="card mt-3" style="width: 15rem;">
+              <img class="card-img-top" src="<%= e.img %> " alt="Card image cap">
+              <div class="card-body  d-flex justify-content-center flex-column">
+                <h5 class="card-title">
+                  <%= e.name %>
+                </h5>
+                <p class="card-text">Giá chỉ: <%= convertPrice(e.price) %>.</p>
+                <a href="/home/<%= e.id %>" class="btn btn-primary">Thông tin pet ^^</a>
+              </div>
+            </div>
+
+
+            <% });%>
+
+        </div>
+
+
+
+    </div>
+
+    <% include ../partials/footer%>
+  </body>
+  <style>
+    .card{
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+    .card:hover{
+      transform: scale(1.1);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .avatar{
+      width: 100px;
+      height: 100px;
+    }
+    .avatar img{
+      display: block;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 50%;
+    }
+    .bg {
+      padding: 0;
+      background-image: url('/images/bghome.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      display: block;
+    }
+  </style>
+
+</html>
+<!-- <div class="card" style="width: 15rem;">
+  <img class="card-img-top" src="https://tse2.mm.bing.net/th?id=OIP.-N1Vq4XnsgNYvl4GIENj5AHaHa&pid=Api&P=0" alt="Card image cap">
+  <div class="card-body  d-flex justify-content-center flex-column">
+    <h5 class="card-title">Husky</h5>
+    <p class="card-text">Giá rẻ: 100000đ.</p>
+    <a href="#" class="btn btn-primary">Show info pet</a>
+  </div>
+</div> -->

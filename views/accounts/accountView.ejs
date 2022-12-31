@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../partials/header %>
+
+
+  <body class="bg">
+    <div class="container">
+      <% include ../partials/toppage%>
+
+        <div class="row d-flex justify-content-around mt-5">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="<%= data.avt %>" alt="Card image cap">
+            <div class="card-body  d-flex justify-content-center flex-column">
+              <h5 class="card-title">
+                <%= data.name %>
+              </h5>
+              <p class="card-text">Thông tin: <%= data.age %> tuổi
+              </p>
+              <p class="card-text">Số sản phẩm trong giỏ: <%= data.cart.length %> sản phẩm
+              </p>
+              <p class="card-text">Sản phẩm gồm: <% data.cart.forEach(function(e) { %>
+                  <%= e.name %>;
+
+                    <% });%>
+              </p>
+              <a href="/account" class="btn btn-primary">Quay về</a>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+    <% include ../partials/footer%>
+
+  </body>
+  <style>
+    .bg {
+      padding: 0;
+      background-image: url('/images/bgaccount.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      display: block;
+    }
+  </style>
+
+</html>
