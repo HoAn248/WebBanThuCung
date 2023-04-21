@@ -17,5 +17,17 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "description": "��#\u0000 \u0000W\u0000e\u0000b\u0000B\u0000a\u0000n\u0000T\u0000h\u0000u\u0000C\u0000u\u0000n\u0000g\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoAn248/WebBanThuCung.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoAn248/WebBanThuCung/issues"
+  },
+  "homepage": "https://github.com/HoAn248/WebBanThuCung#readme"
 }
