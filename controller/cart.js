@@ -8,7 +8,6 @@ exports.getCart = ((req, res)=>{
     let id = req.cookies.userId
     
     Users.findOne({_id: id}).then(data=>{
-        console.log(data.cart);
         res.render('./cart/cart',{data: data.cart, idUser: id, convertPrice: util.convertPrice})
     })
     
