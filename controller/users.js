@@ -16,7 +16,7 @@ exports.postLogin = ((req, res, next) => {
                 res.cookie('userId', data._id)
                 res.redirect(`/home`)
             } else {
-                res.render('./users/login', { thongBao: "Password sai" })
+                res.render('./users/login', { thongBao: "Password không đúng" })
             }
         } else {
             res.render('./users/login', { thongBao: "Vui lòng nhập dữ liệu" })
