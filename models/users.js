@@ -1,18 +1,18 @@
 var mongoose = require('mongoose')
 const url = "mongodb+srv://Users:hoducan123@cluster0.thhnc7l.mongodb.net/database?retryWrites=true&w=majority"
-// mongoose.connect(url, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// }, () => {
-//     console.log('kết nối');
-// })
-mongoose.connect(url)
-  .then(() => {
-    console.log('Successfully connected');
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, () => {
+    console.log('kết nối');
+})
+// mongoose.connect(url)
+//   .then(() => {
+//     console.log('Successfully connected');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 const schema = mongoose.Schema
 const khungUsers = new schema({
     name: {
